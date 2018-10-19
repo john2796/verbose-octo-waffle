@@ -1,6 +1,6 @@
-import React from "react";
-import classes from "./Burger.module.css";
-import BurgerIngredient from "./BurgerIngredient/BurgerIngredient";
+import React from 'react';
+import classes from './Burger.module.css';
+import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
 const burger = ({ ingredients }) => {
   // convert object to array by getting object key and map through with the type of igKey
