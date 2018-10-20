@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const BurguerIngredientWrapper = styled.div`
+const BurgerIngredientWrapper = styled.div`
   .BreadBottom {
     height: 13%;
     width: 80%;
@@ -147,7 +147,7 @@ class BurgerIngredient extends Component {
       default:
         ingredient = null;
     }
-    return <BurguerIngredientWrapper>{ingredient}</BurguerIngredientWrapper>;
+    return <BurgerIngredientWrapper>{ingredient}</BurgerIngredientWrapper>;
   }
 }
 
