@@ -18,6 +18,9 @@ const SideDrawerWrapper = styled.div`
     box-sizing: border-box;
     transition: transform 0.3s ease-out;
   }
+  .Logo {
+    height: 70px;
+  }
 
   @media (min-width: 500px) {
     .SideDrawer {
@@ -37,7 +40,10 @@ const sideDrawer = props => {
   return (
     <SideDrawerWrapper>
       <div className="SideDrawer">
-        <Logo height="11%" style={{ marginBottom: '32px' }} />
+        <div className="Logo">
+          <Logo style={{ marginBottom: '32px' }} />
+        </div>
+
         <nav>
           <NavigationItems />
         </nav>

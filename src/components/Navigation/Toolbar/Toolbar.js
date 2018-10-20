@@ -23,10 +23,10 @@ const ToolbarWrapper = styled.div`
       height: 100%;
     }
   }
-
   .Logo {
-    width: 80%;
+    height: 70px;
   }
+
   /*  */
   @media (max-width: 499px) {
     .DesktopOnly {
@@ -40,7 +40,10 @@ const toolbar = props => {
     <ToolbarWrapper>
       <header className="Toolbar">
         <div>Menu</div>
-        <Logo height="80%" className="Logo" />
+        <div className="Logo">
+          <Logo />
+        </div>
+
         <nav className="DesktopOnly">
           <NavigationItems />
         </nav>
