@@ -1,14 +1,41 @@
 import React from 'react';
-import classes from './Button.module.css';
+
+import styled from 'styled-components';
+
+const ButtonWrapper = styled.div`
+  .Button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+  }
+
+  .Button:first-of-type {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .Success {
+    color: #5c9210;
+  }
+
+  .Danger {
+    color: #944317;
+  }
+`;
 
 const button = ({ btnType, clicked, children }) => {
   return (
-    <button
-      onClick={clicked}
-      className={[classes.Button, classes[btnType]].join(' ')}
-    >
-      {children}
-    </button>
+    <ButtonWrapper>
+      <button onClick={clicked} className={['Button', [btnType]].join(' ')}>
+        {children}
+      </button>
+    </ButtonWrapper>
   );
 };
 
