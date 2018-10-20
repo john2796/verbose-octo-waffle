@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 
-const ToolbarStyle = styled.div`
+const ToolbarWrapper = styled.div`
   .Toolbar {
     height: 56px;
     width: 100%;
@@ -21,7 +21,6 @@ const ToolbarStyle = styled.div`
 
     nav {
       height: 100%;
-      background: red;
     }
   }
 
@@ -38,7 +37,7 @@ const ToolbarStyle = styled.div`
 
 const toolbar = props => {
   return (
-    <ToolbarStyle>
+    <ToolbarWrapper>
       <header className="Toolbar">
         <div>Menu</div>
         <Logo height="80%" className="Logo" />
@@ -46,7 +45,7 @@ const toolbar = props => {
           <NavigationItems />
         </nav>
       </header>
-    </ToolbarStyle>
+    </ToolbarWrapper>
   );
 };
 
