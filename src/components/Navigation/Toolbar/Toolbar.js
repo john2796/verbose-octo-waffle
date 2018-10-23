@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
+import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 
 const ToolbarWrapper = styled.div`
   .Toolbar {
@@ -24,7 +25,7 @@ const ToolbarWrapper = styled.div`
     }
   }
   .Logo {
-    height: 70px;
+    height: 54px;
   }
 
   /*  */
@@ -39,11 +40,10 @@ const toolbar = props => {
   return (
     <ToolbarWrapper>
       <header className="Toolbar">
-        <div>Menu</div>
+        <DrawerToggle clicked={props.drawerTogglClicked} />
         <div className="Logo">
           <Logo />
         </div>
-
         <nav className="DesktopOnly">
           <NavigationItems />
         </nav>

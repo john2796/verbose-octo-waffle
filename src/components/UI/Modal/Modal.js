@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import Aux from '../../../hoc/Aux';
+import Aux from '../../../hoc/Aux/Aux';
 import Backdrop from '../Backdrop/Backdrop';
 import styled from 'styled-components';
 
@@ -29,23 +29,37 @@ const ModalWrapper = styled.div`
 `;
 // styles Ends here
 
-const modal = ({ show, children, modalClosed }) => {
-  return (
-    <ModalWrapper>
-      <Aux>
-        <Backdrop show={show} clicked={modalClosed} />
-        <div
-          className="Modal"
-          style={{
-            transform: show ? 'translateY(0)' : 'translateY(-100vh)',
-            opacity: show ? '1' : '0'
-          }}
-        >
-          {children}
-        </div>
-      </Aux>
-    </ModalWrapper>
-  );
-};
+class Modal extends Component {
+  state = {};
 
-export default modal;
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextProps.show !== this.props.show;
+  }
+
+  //WARNING! To be deprecated in React v17. Use componentDidUpdate instead.
+  componentWillUpdate(nextProps, nextState) {
+    console.log('[Modal] WillUpdate');
+  }
+
+  render() {
+    const { show, children, modalClosed } = this.props;
+    return (
+      <ModalWrapper>
+        <Aux>
+          <Backdrop show={show} clicked={modalClosed} />
+          <div
+            className="Modal"
+            style={{
+              transform: show ? 'translateY(0)' : 'translateY(-100vh)',
+              opacity: show ? '1' : '0'
+            }}
+          >
+            {children}
+          </div>
+        </Aux>
+      </ModalWrapper>
+    );
+  }
+}
+
+export default Modal;

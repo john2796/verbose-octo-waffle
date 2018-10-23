@@ -3,6 +3,8 @@ import React from 'react';
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import styled from 'styled-components';
+import Backdrop from '../../UI/Backdrop/Backdrop';
+import Aux from '../../../hoc/Aux/Aux';
 
 const SideDrawerWrapper = styled.div`
   .SideDrawer {
@@ -37,18 +39,25 @@ const SideDrawerWrapper = styled.div`
 `;
 
 const sideDrawer = props => {
+  let attachedClasses = ['SideDrawer', 'Close'];
+  if (props.open) {
+    attachedClasses = ['SideDrawer', 'Open'];
+  }
   return (
-    <SideDrawerWrapper>
-      <div className="SideDrawer">
-        <div className="Logo">
-          <Logo style={{ marginBottom: '32px' }} />
-        </div>
+    <Aux>
+      <SideDrawerWrapper>
+        <Backdrop show={props.open} clicked={props.closed} />
+        <div className={attachedClasses.join(' ')}>
+          <div className="Logo">
+            <Logo style={{ marginBottom: '32px' }} />
+          </div>
 
-        <nav>
-          <NavigationItems />
-        </nav>
-      </div>
-    </SideDrawerWrapper>
+          <nav>
+            <NavigationItems />
+          </nav>
+        </div>
+      </SideDrawerWrapper>
+    </Aux>
   );
 };
 
